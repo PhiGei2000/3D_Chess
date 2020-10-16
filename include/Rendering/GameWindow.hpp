@@ -5,14 +5,14 @@
 #include <GLFW/glfw3.h>
 #include <entt/entt.hpp>
 
-#include "../include/GameRenderer.hpp"
+#include "../Systems/GameRenderSystem.hpp"
 
 struct KeyEvent;
 
 class GameWindow {
 private:
 	GLFWwindow* m_window;	
-	GameRenderer m_renderer;
+	GameRenderSystem m_renderer;
 	bool m_fullscreen = false;
     double lastMouseX, lastMouseY;
 

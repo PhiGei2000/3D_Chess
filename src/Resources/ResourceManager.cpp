@@ -1,4 +1,4 @@
-#include "../include/ResourceManager.hpp"
+#include "../../include/Resources/ResourceManager.hpp"
 
 Resource::Resource()
     : m_type(typeid(void*)), m_data(nullptr) {
@@ -40,10 +40,10 @@ T* ResourceManager::getResource(const std::string& resourceId) {
     return resource.getValue<T>();
 }
 
-#include "../include/Mesh.hpp"
-#include "../include/Shader.hpp"
-#include "../include/Material.hpp"
-#include "../include/Geometry.hpp"
+#include "../../include/Components/MeshComponent.hpp"
+#include "../../include/Resources/Shader.hpp"
+#include "../../include/Resources/Material.hpp"
+#include "../../include/Resources/Geometry.hpp"
 
 template void ResourceManager::addResource<Geometry>(const std::string&, const Geometry*);
 template void ResourceManager::addResource<Mesh>(const std::string&, const Mesh*);

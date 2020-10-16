@@ -1,6 +1,6 @@
-#include "../include/Events.hpp"
+#include "../../include/Events/Events.hpp"
 
-#include "../include/GameWindow.hpp"
+#include "../../include/Rendering/GameWindow.hpp"
 
 Event::Event(GameWindow* window)
     : window{window} {

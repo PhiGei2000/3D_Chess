@@ -1,7 +1,7 @@
 #include "../include/ObjLoader.hpp"
 
-#include "../include/Geometry.hpp"
-#include "../include/Vertex.hpp"
+#include "../include/Resources/Geometry.hpp"
+#include "../include/Rendering/Vertex.hpp"
 
 #include <fstream>
 #include <iostream>

@@ -1,10 +1,10 @@
-#include "../include/GameWindow.hpp"
+#include "../../include/Rendering/GameWindow.hpp"
 
-#include "../include/EventDispatcher.hpp"
+#include "../../include/Events/EventDispatcher.hpp"
 
-#include "../include/Mesh.hpp"
-#include "../include/ResourceManager.hpp"
-#include "../include/Transformation.hpp"
+#include "../../include/Components/MeshComponent.hpp"
+#include "../../include/Resources/ResourceManager.hpp"
+#include "../../include/Components/TransformationComponent.hpp"
 
 #include <exception>
 
@@ -99,7 +99,7 @@ void GameWindow::run() {
     while (!glfwWindowShouldClose(m_window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        m_renderer.render();
+        m_renderer.update();
 
         glfwSwapBuffers(m_window);
 

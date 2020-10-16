@@ -1,5 +1,5 @@
-#include "../include/GameRenderer.hpp"
-#include "../include/GameWindow.hpp"
+#include "../include/Systems/GameRenderSystem.hpp"
+#include "../include/Rendering/GameWindow.hpp"
 #include <iostream>
 
 void initResources();
@@ -12,12 +12,12 @@ int main() {
     window.run();
 }
 
-#include "../include/Geometry.hpp"
-#include "../include/Material.hpp"
 #include "../include/ObjLoader.hpp"
-#include "../include/ResourceManager.hpp"
-#include "../include/Shader.hpp"
-#include "../include/Texture.hpp"
+#include "../include/Resources/Geometry.hpp"
+#include "../include/Resources/Material.hpp"
+#include "../include/Resources/ResourceManager.hpp"
+#include "../include/Resources/Shader.hpp"
+#include "../include/Resources/Texture.hpp"
 
 void initResources() {
     const Geometry* board = Utility::ObjLoader::loadObj("Resources/models/board.obj");    

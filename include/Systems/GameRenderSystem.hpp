@@ -1,25 +1,22 @@
 #pragma once
 #include <entt/entt.hpp>
-#include "Camera.hpp"
+#include <glm/glm.hpp>
 
 struct WindowSizeEvent;
 struct MouseMoveEvent;
 struct ScrollEvent;
 
-class GameRenderer {
-private:	
-    entt::registry &m_registry;
-    Camera m_camera;
-
-    glm::vec2 m_size;    
+class GameRenderSystem {
+  private:
+    entt::registry& m_registry;
+    glm::vec2 m_size;
 
     void handleResize(const WindowSizeEvent& e);
     void handleMouseInput(const MouseMoveEvent& e);
     void handleScroll(const ScrollEvent& e);
 
   public:
-	GameRenderer(entt::registry& registry);
+    GameRenderSystem(entt::registry& registry);
 
-	void render();	
+    void update();
 };
-

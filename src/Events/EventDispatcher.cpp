@@ -1,4 +1,4 @@
-#include "../include/EventDispatcher.hpp"
+#include "../../include/Events/EventDispatcher.hpp"
 
 #include <stdexcept>
 

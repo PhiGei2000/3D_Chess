@@ -1,5 +1,5 @@
-#include "../include/Shader.hpp"
-#include "../include/Material.hpp"
+#include "../../include/Resources/Shader.hpp"
+#include "../../include/Resources/Material.hpp"
 
 #include <fstream>
 #include <iostream>

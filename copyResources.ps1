@@ -28,5 +28,5 @@ foreach ($file in $resourceFiles) {
 }
 
 #dlls
-Copy-Item -Path C:\lib\GLEW\lib\Release\Win32\glew32.dll -Destination .\build\bin
-Copy-Item -Path C:\lib\GLFW\lib\glfw3.dll -Destination .\build\bin
+Copy-Item -Path C:\lib\GLEW\lib\Release\Win32\glew32.dll -Destination .\build\bin\Debug
+Copy-Item -Path C:\lib\GLFW\lib\glfw3.dll -Destination .\build\bin\Debug

@@ -1,6 +1,6 @@
 #pragma once
-#include "Geometry.hpp"
-#include "Material.hpp"
+#include "../Resources/Geometry.hpp"
+#include "../Resources/Material.hpp"
 
 #include <glm/glm.hpp>
 #include <vector>

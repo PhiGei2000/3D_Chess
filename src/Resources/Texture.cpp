@@ -1,4 +1,4 @@
-#include "../include/Texture.hpp"
+#include "../../include/Resources/Texture.hpp"
 
 #include <SOIL/SOIL.h>
 

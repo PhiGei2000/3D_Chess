@@ -1,6 +1,6 @@
-#include "../include/Geometry.hpp"
+#include "../../include/Resources/Geometry.hpp"
 
-#include "../include/Vertex.hpp"
+#include "../../include/Rendering/Vertex.hpp"
 
 #include <GL/glew.h>
 

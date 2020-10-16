@@ -3,7 +3,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-struct Camera {
+struct CameraComponent {
     float distance = 5;
     float phi = 0;
     float theta = 45;
