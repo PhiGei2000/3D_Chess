@@ -6,6 +6,7 @@
 #include <string>
 
 struct Material;
+struct DirectionalLight;
 
 class Shader {
   private:
@@ -28,4 +29,5 @@ class Shader {
     void upload(const std::string& location, const glm::vec4& data);
     void upload(const std::string& location, const glm::mat4& data);
     void upload(const std::string& location, const Material& data, int textureOffset = 0);
+    void upload(const std::string& location, const DirectionalLight& light);
 };

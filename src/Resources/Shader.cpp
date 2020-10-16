@@ -1,5 +1,6 @@
 #include "../../include/Resources/Shader.hpp"
 #include "../../include/Resources/Material.hpp"
+#include "../../include/Rendering/Light.hpp"
 
 #include <fstream>
 #include <iostream>
@@ -125,4 +126,9 @@ void Shader::upload(const std::string& name, const Material& data, int textureOf
     upload(name + ".diffuse", textureOffset);
     upload(name + ".normal", textureOffset + 1);
     upload(name + ".specular", textureOffset + 2);
+}
+
+void Shader::upload(const std::string& name, const DirectionalLight& light) {
+    upload(name + ".direction", light.direction);
+    upload(name + ".color", light.color);
 }

@@ -1,15 +1,17 @@
 #include "../../include/Rendering/GameWindow.hpp"
 
 #include "../../include/Events/EventDispatcher.hpp"
+#include "../../include/Systems/GameRenderSystem.hpp"
+#include "../../include/Resources/ResourceManager.hpp"
 
 #include "../../include/Components/MeshComponent.hpp"
-#include "../../include/Resources/ResourceManager.hpp"
 #include "../../include/Components/TransformationComponent.hpp"
+#include "../../include/Components/CameraComponent.hpp"
 
 #include <exception>
 
 GameWindow::GameWindow(int width, int height, const char* title)
-    : m_regsitry(entt::registry()), m_renderer(m_regsitry) {
+    : m_regsitry(entt::registry()) {
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
@@ -90,17 +92,27 @@ void GameWindow::handleKeyEvent(const KeyEvent& e) {
 }
 
 void GameWindow::init() {
+    m_systems.emplace_back(new GameRenderSystem(m_regsitry));
+
     entt::entity entity = m_regsitry.create();
-    m_regsitry.emplace<Transformation>(entity, glm::vec3(), glm::quat(), glm::vec3(1.0f));
-    const Mesh* mesh = ResourceManager::getResource<Mesh>("cube");
+    m_regsitry.emplace<TransformationComponent>(entity, glm::vec3(), glm::quat(), glm::vec3(1.0f));
+    m_regsitry.emplace<MeshComponent>(entity, *ResourceManager::getResource<MeshComponent>("board"));
+
+    entity = m_regsitry.create();
+    m_regsitry.emplace<CameraComponent>(entity);
 }
 
 void GameWindow::run() {
     while (!glfwWindowShouldClose(m_window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        m_renderer.update();
+        int time = (int)(glfwGetTime() / 1000);
 
+        for(auto system : m_systems) {
+            system->update(time);
+        }
+
+        glfwSetTime(0);
         glfwSwapBuffers(m_window);
 
         glfwPollEvents();

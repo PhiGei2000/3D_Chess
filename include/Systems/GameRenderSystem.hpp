@@ -1,15 +1,16 @@
 #pragma once
-#include <entt/entt.hpp>
+#include "System.hpp"
+#include "../Rendering/Light.hpp"
 #include <glm/glm.hpp>
 
 struct WindowSizeEvent;
 struct MouseMoveEvent;
 struct ScrollEvent;
 
-class GameRenderSystem {
-  private:
-    entt::registry& m_registry;
+class GameRenderSystem : public System {
+  private:    
     glm::vec2 m_size;
+    DirectionalLight m_light;
 
     void handleResize(const WindowSizeEvent& e);
     void handleMouseInput(const MouseMoveEvent& e);
@@ -18,5 +19,5 @@ class GameRenderSystem {
   public:
     GameRenderSystem(entt::registry& registry);
 
-    void update();
+    void update(int dt) override;
 };

@@ -1,19 +1,20 @@
 #pragma once
 #include <functional>
+#include <vector>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <entt/entt.hpp>
 
-#include "../Systems/GameRenderSystem.hpp"
+#include "../Systems/System.hpp"
 
 struct KeyEvent;
 
 class GameWindow {
 private:
-	GLFWwindow* m_window;	
-	GameRenderSystem m_renderer;
-	bool m_fullscreen = false;
+	GLFWwindow* m_window;
+    std::vector<System*> m_systems;
+    bool m_fullscreen = false;
     double lastMouseX, lastMouseY;
 
     entt::registry m_regsitry;

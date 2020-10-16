@@ -1,0 +1,40 @@
+{
+    "textures": [
+        {
+            "id": "wood_diffuse",
+            "filename": "textures/wood_diffuse.jpg"
+        },
+        {
+            "id": "wood_normal",
+            "filename": "textures/wood_normal.jpg"
+        },
+        {
+            "id": "wood_specular",
+            "filename": "textures/wood_specular.jpg"
+        }
+    ],
+    "shaders": [
+        {
+            "id": "meshShader",
+            "vertex": "shaders/mesh.vert",
+            "geometry": "shaders/mesh.geom",
+            "fragment": "shaders/mesh.frag"
+        }
+    ],
+    "materials": [
+        {
+            "id": "Material",
+            "diffuse": "wood_diffuse",
+            "normal": "wood_normal",
+            "specular": "wood_specular",
+            "shader": "meshShader"
+        }
+    ],
+    "models": [
+        {
+            "id": "board",
+            "material": "Material",
+            "filename": "models/board.obj"
+        }
+    ]
+}

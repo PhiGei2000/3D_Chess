@@ -30,4 +30,6 @@ class ResourceManager {
 
     template <typename T>
     static T* getResource(const std::string& resourceId);
+
+    static void init();
 };

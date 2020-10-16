@@ -23,6 +23,7 @@ include_directories("C:/lib/GLEW/include")
 include_directories("C:/lib/GLFW/include")
 include_directories("C:/lib/GLM/include")
 include_directories("C:/lib/SOIL/src")
+include_directories("C:/lib/nlohmannjson/single_include")
 
 find_library(GLEW_LIBRARIES glew32 C:/lib/GLEW/lib/Release/Win32)
 find_library(GLFW_LIBRARIES glfw3 C:/lib/GLFW/lib)
