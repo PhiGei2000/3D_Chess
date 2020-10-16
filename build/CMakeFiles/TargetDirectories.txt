@@ -1,0 +1,4 @@
+D:/Users/Philipp/Source/Repos/3DChess/build/CMakeFiles/3DChess.dir
+D:/Users/Philipp/Source/Repos/3DChess/build/CMakeFiles/PACKAGE.dir
+D:/Users/Philipp/Source/Repos/3DChess/build/CMakeFiles/ALL_BUILD.dir
+D:/Users/Philipp/Source/Repos/3DChess/build/CMakeFiles/ZERO_CHECK.dir

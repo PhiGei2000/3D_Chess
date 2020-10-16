@@ -1,0 +1,10 @@
+^D:\USERS\PHILIPP\SOURCE\REPOS\3DCHESS\BUILD\CMAKEFILES\16998C123080743B0F8C4F393D1AAC4D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Users/Philipp/Source/Repos/3DChess -BD:/Users/Philipp/Source/Repos/3DChess/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Users/Philipp/Source/Repos/3DChess/build/3DChess.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
