@@ -6,5 +6,10 @@
 #include <vector>
 
 struct MeshComponent {
-    std::vector<std::pair<const Geometry*, const Material*>> data;
+    Geometry* geometry;
+    Material* material;
+
+    inline MeshComponent(Geometry* geometry, Material* material)
+        : geometry{geometry}, material{material} {
+    }
 };

@@ -1,11 +1,11 @@
 #include "../../include/Resources/Shader.hpp"
-#include "../../include/Resources/Material.hpp"
 #include "../../include/Rendering/Light.hpp"
+#include "../../include/Resources/Material.hpp"
 
 #include <fstream>
+#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <sstream>
-#include <glm/gtc/type_ptr.hpp>
 
 Shader::Shader(const std::string& vertShaderFilename, const std::string& fragShaderFilename, const std::string& geomShaderFilename) {
     unsigned int vertShader = loadShader(vertShaderFilename, GL_VERTEX_SHADER);
@@ -19,7 +19,7 @@ Shader::Shader(const std::string& vertShaderFilename, const std::string& fragSha
     glAttachShader(m_program, vertShader);
     glAttachShader(m_program, fragShader);
 
-    if(geomShaderFilename != "") {
+    if (geomShaderFilename != "") {
         glAttachShader(m_program, geomShader);
     }
 
@@ -37,7 +37,7 @@ Shader::Shader(const std::string& vertShaderFilename, const std::string& fragSha
     glDeleteShader(vertShader);
     glDeleteShader(fragShader);
 
-    if(geomShaderFilename != "") {
+    if (geomShaderFilename != "") {
         glDeleteShader(geomShader);
     }
 }
@@ -57,7 +57,7 @@ unsigned int Shader::loadShader(const std::string& filename, unsigned int type) 
 
     int success;
     glGetProgramiv(shader, GL_COMPILE_STATUS, &success);
-    if(!success) {
+    if (!success) {
         char info[512];
         glGetProgramInfoLog(shader, 512, NULL, info);
 
@@ -69,7 +69,7 @@ unsigned int Shader::loadShader(const std::string& filename, unsigned int type) 
 }
 
 unsigned int Shader::getLocation(const std::string& location) {
-    if(m_locations.contains(location)) {
+    if (m_locations.contains(location)) {
         return m_locations[location];
     }
     else {
@@ -116,16 +116,6 @@ void Shader::upload(const std::string& name, const glm::vec4& data) {
 void Shader::upload(const std::string& name, const glm::mat4& data) {
     unsigned int location = getLocation(name);
     glUniformMatrix4fv(location, 1, false, glm::value_ptr(data));
-}
-
-void Shader::upload(const std::string& name, const Material& data, int textureOffset) {
-    data.diffuse->bind(GL_TEXTURE_2D, textureOffset);
-    data.normal->bind(GL_TEXTURE_2D, textureOffset + 1);
-    data.specular->bind(GL_TEXTURE_2D, textureOffset + 2);
-
-    upload(name + ".diffuse", textureOffset);
-    upload(name + ".normal", textureOffset + 1);
-    upload(name + ".specular", textureOffset + 2);
 }
 
 void Shader::upload(const std::string& name, const DirectionalLight& light) {

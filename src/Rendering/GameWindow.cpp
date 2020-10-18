@@ -1,12 +1,16 @@
 #include "../../include/Rendering/GameWindow.hpp"
 
 #include "../../include/Events/EventDispatcher.hpp"
-#include "../../include/Systems/GameRenderSystem.hpp"
 #include "../../include/Resources/ResourceManager.hpp"
+
+#include "../../include/Systems/GameRenderSystem.hpp"
+#include "../../include/Systems/InputSystem.hpp"
 
 #include "../../include/Components/MeshComponent.hpp"
 #include "../../include/Components/TransformationComponent.hpp"
 #include "../../include/Components/CameraComponent.hpp"
+
+#include "../../include/Utility/SceneLoader.hpp"
 
 #include <exception>
 
@@ -93,13 +97,17 @@ void GameWindow::handleKeyEvent(const KeyEvent& e) {
 
 void GameWindow::init() {
     m_systems.emplace_back(new GameRenderSystem(m_regsitry));
+    m_systems.emplace_back(new InputSystem(m_regsitry));    
 
     entt::entity entity = m_regsitry.create();
-    m_regsitry.emplace<TransformationComponent>(entity, glm::vec3(), glm::quat(), glm::vec3(1.0f));
-    m_regsitry.emplace<MeshComponent>(entity, *ResourceManager::getResource<MeshComponent>("board"));
+    CameraComponent& camera = m_regsitry.emplace<CameraComponent>(entity);
+    int width, height;
+    glfwGetWindowSize(m_window, &width, &height);
 
-    entity = m_regsitry.create();
-    m_regsitry.emplace<CameraComponent>(entity);
+    camera.updateViewMatrix();
+    camera.updateProjectionMatrix(width, height);
+
+    Utility::SceneLoader::loadScene("scene.json", m_regsitry);
 }
 
 void GameWindow::run() {

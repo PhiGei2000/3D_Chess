@@ -1,40 +1,165 @@
 {
     "textures": [
         {
-            "id": "wood_diffuse",
-            "filename": "textures/wood_diffuse.jpg"
+            "id": "board_diffuse",
+            "filename": "textures/board_diffuse.jpg"
         },
         {
-            "id": "wood_normal",
-            "filename": "textures/wood_normal.jpg"
+            "id": "board_normal",
+            "filename": "textures/board_normal.jpg"
         },
         {
-            "id": "wood_specular",
-            "filename": "textures/wood_specular.jpg"
+            "id": "board_specular",
+            "filename": "textures/board_specular.jpg"
         }
     ],
     "shaders": [
         {
-            "id": "meshShader",
+            "id": "meshShaderTexture",
             "vertex": "shaders/mesh.vert",
             "geometry": "shaders/mesh.geom",
-            "fragment": "shaders/mesh.frag"
+            "fragment": "shaders/textured_mesh.frag"
+        },
+        {
+            "id": "meshShaderColor",
+            "vertex": "shaders/mesh.vert",
+            "fragment": "shaders/colored_mesh.frag"
         }
     ],
     "materials": [
         {
-            "id": "Material",
-            "diffuse": "wood_diffuse",
-            "normal": "wood_normal",
-            "specular": "wood_specular",
-            "shader": "meshShader"
+            "id": "materialBoard",
+            "type": "texture",
+            "diffuse": "board_diffuse",            
+            "specular": "board_specular",
+            "shader": "meshShaderTexture"
+        },
+        {
+            "id": "materialWhite",
+            "type": "color",
+            "diffuse": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "specular": [
+                0.9,
+                0.2,
+                0.2
+            ],
+            "shader": "meshShaderColor"
+        },
+        {
+            "id": "materialBlack",
+            "type": "color",
+            "diffuse": [
+                0.01,
+                0.01,
+                0.01
+            ],
+            "specular": [
+                0.9,
+                0.4,
+                0.4
+            ],
+            "shader": "meshShaderColor"
         }
     ],
     "models": [
         {
-            "id": "board",
-            "material": "Material",
+            "id": "modelBoard",
             "filename": "models/board.obj"
+        },
+        {
+            "id": "modelPawn",
+            "filename": "models/pawn.obj"
+        },
+        {
+            "id": "modelRook",
+            "filename": "models/rook.obj"
+        },
+        {
+            "id": "modelKnight",
+            "filename": "models/knight.obj"
+        },
+        {
+            "id": "modelBishop",
+            "filename": "models/bishop.obj"
+        },
+        {
+            "id": "modelQueen",
+            "filename": "models/queen.obj"
+        },
+        {
+            "id": "modelKing",
+            "filename": "models/king.obj"
+        }
+    ],
+    "objects": [
+        {
+            "id": "board",
+            "material": "materialBoard",
+            "model": "modelBoard"
+        },
+        {
+            "id": "blackPawn",
+            "material": "materialBlack",
+            "model": "modelPawn"
+        },
+        {
+            "id": "whitePawn",
+            "material": "materialWhite",
+            "model": "modelPawn"
+        },
+        {
+            "id": "blackRook",
+            "material": "materialBlack",
+            "model": "modelRook"
+        },
+        {
+            "id": "whiteRook",
+            "material": "materialWhite",
+            "model": "modelRook"
+        },
+        {
+            "id": "blackKnight",
+            "material": "materialBlack",
+            "model": "modelKnight"
+        },
+        {
+            "id": "whiteKnight",
+            "material": "materialWhite",
+            "model": "modelKnight"
+        },
+        {
+            "id": "blackBishop",
+            "material": "materialBlack",
+            "model": "modelBishop"
+        },
+        {
+            "id": "whiteBishop",
+            "material": "materialWhite",
+            "model": "modelBishop"
+        },
+        {
+            "id": "blackQueen",
+            "material": "materialBlack",
+            "model": "modelQueen"
+        },
+        {
+            "id": "whiteQueen",
+            "material": "materialWhite",
+            "model": "modelQueen"
+        },
+        {
+            "id": "blackKing",
+            "material": "materialBlack",
+            "model": "modelKing"
+        },
+        {
+            "id": "whiteKing",
+            "material": "materialWhite",
+            "model": "modelKing"
         }
     ]
 }

@@ -1,0 +1,334 @@
+{
+    "objects": [
+        {
+            "transformation": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            },
+            "mesh": "board"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.5,
+                    0.05,
+                    0.7
+                ]
+            },
+            "mesh": "whitePawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.5,
+                    0.05,
+                    0.5
+                ]
+            },
+            "mesh": "whitePawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.5,
+                    0.05,
+                    0.3
+                ]
+            },
+            "mesh": "whitePawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.5,
+                    0.05,
+                    0.1
+                ]
+            },
+            "mesh": "whitePawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.5,
+                    0.05,
+                    -0.1
+                ]
+            },
+            "mesh": "whitePawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.5,
+                    0.05,
+                    -0.3
+                ]
+            },
+            "mesh": "whitePawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.5,
+                    0.05,
+                    -0.5
+                ]
+            },
+            "mesh": "whitePawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.5,
+                    0.05,
+                    -0.7
+                ]
+            },
+            "mesh": "whitePawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.7,
+                    0.05,
+                    0.7
+                ]
+            },
+            "mesh": "whiteRook"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.7,
+                    0.05,
+                    0.5
+                ]
+            },
+            "mesh": "whiteKnight"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.7,
+                    0.05,
+                    0.3
+                ]
+            },
+            "mesh": "whiteBishop"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.7,
+                    0.05,
+                    0.1
+                ]
+            },
+            "mesh": "whiteQueen"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.7,
+                    0.05,
+                    -0.1
+                ]
+            },
+            "mesh": "whiteKing"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.7,
+                    0.05,
+                    -0.3
+                ]
+            },
+            "mesh": "whiteBishop"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.7,
+                    0.05,
+                    -0.5
+                ]
+            },
+            "mesh": "whiteKnight"
+        },
+        {
+            "transformation": {
+                "position": [
+                    0.7,
+                    0.05,
+                    -0.7
+                ]
+            },
+            "mesh": "whiteRook"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.5,
+                    0.05,
+                    0.7
+                ]
+            },
+            "mesh": "blackPawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.5,
+                    0.05,
+                    0.5
+                ]
+            },
+            "mesh": "blackPawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.5,
+                    0.05,
+                    0.3
+                ]
+            },
+            "mesh": "blackPawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.5,
+                    0.05,
+                    0.1
+                ]
+            },
+            "mesh": "blackPawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.5,
+                    0.05,
+                    -0.1
+                ]
+            },
+            "mesh": "blackPawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.5,
+                    0.05,
+                    -0.3
+                ]
+            },
+            "mesh": "blackPawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.5,
+                    0.05,
+                    -0.5
+                ]
+            },
+            "mesh": "blackPawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.5,
+                    0.05,
+                    -0.7
+                ]
+            },
+            "mesh": "blackPawn"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.7,
+                    0.05,
+                    0.7
+                ]
+            },
+            "mesh": "blackRook"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.7,
+                    0.05,
+                    0.5
+                ]
+            },
+            "mesh": "blackKnight"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.7,
+                    0.05,
+                    0.3
+                ]
+            },
+            "mesh": "blackBishop"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.7,
+                    0.05,
+                    0.1
+                ]
+            },
+            "mesh": "blackQueen"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.7,
+                    0.05,
+                    -0.1
+                ]
+            },
+            "mesh": "blackKing"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.7,
+                    0.05,
+                    -0.3
+                ]
+            },
+            "mesh": "blackBishop"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.7,
+                    0.05,
+                    -0.5
+                ]
+            },
+            "mesh": "blackKnight"
+        },
+        {
+            "transformation": {
+                "position": [
+                    -0.7,
+                    0.05,
+                    -0.7
+                ]
+            },
+            "mesh": "blackRook"
+        }
+    ]
+}

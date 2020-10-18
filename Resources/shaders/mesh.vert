@@ -6,6 +6,7 @@ layout (location = 2) in vec2 aTextureCoords;
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;
+uniform bool useNormalMap;
 
 out VS_OUT {
     vec3 fragPos;

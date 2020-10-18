@@ -11,25 +11,33 @@ in VS_OUT {
 out GS_OUT {
     vec3 fragPos;
     vec2 texCoords;
+    vec3 normal;
     mat3 tbn;
 } gs_out;
+
+uniform bool useNormalMap;
 
 mat3 calcTBN(vec3 normal, vec3 edge1, vec3 edge2, vec2 duv1, vec2 duv2);
 
 void main() {
     for (int i = 0; i < 3; i++) {
         gl_Position = gl_in[i].gl_Position;
-        
         gs_out.fragPos = gs_in[i].fragPos;
         gs_out.texCoords = gs_in[i].texCoords;
+        gs_out.normal = gs_in[i].normal;
+        
+        if(useNormalMap) {
+            vec3 edge1 = gs_in[(i + 1) % 3].fragPos - gs_in[i].fragPos;
+            vec3 edge2 = gs_in[(i + 2) % 3].fragPos - gs_in[i].fragPos;
 
-        vec3 edge1 = gs_in[(i + 1) % 3].fragPos - gs_in[i].fragPos;
-        vec3 edge2 = gs_in[(i + 2) % 3].fragPos - gs_in[i].fragPos;
+            vec2 duv1 = gs_in[(i + 1) % 3].texCoords - gs_in[i].texCoords;
+            vec2 duv2 = gs_in[(i + 2) % 3].texCoords - gs_in[i].texCoords;
 
-        vec2 duv1 = gs_in[(i + 1) % 3].texCoords - gs_in[i].texCoords;
-        vec2 duv2 = gs_in[(i + 2) % 3].texCoords - gs_in[i].texCoords;
-
-        gs_out.tbn = calcTBN(gs_in[i].normal, edge1, edge2, duv1, duv2);
+            gs_out.tbn = calcTBN(gs_in[i].normal, edge1, edge2, duv1, duv2);
+        }
+        else {
+            gs_out.tbn = mat3(1.0);
+        }
         EmitVertex();
     }
     EndPrimitive();
